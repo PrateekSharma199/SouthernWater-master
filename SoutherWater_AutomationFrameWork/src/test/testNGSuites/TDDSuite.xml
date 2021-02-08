@@ -1,0 +1,104 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1"   verbose="1" name="SouthernWater_Accessibility_Test" annotations="JDK">
+	<listeners>
+	  <listener class-name="Listeners.TestListener"/>
+	  <listener class-name="Listeners.AnnotationTransformer"/>  
+    </listeners>
+<!-- <test name="API Test" junit="false" preserve-order="true">
+		<groups>	
+			<run>	
+	   			<include name="api" />	
+	        </run>	
+	    </groups>	
+		<classes>
+			<class name="testScripts.Employee">	
+				<methods>
+					<include name="EmployeeAPITest"/>
+				</methods>	
+			</class>
+		</classes>	
+	</test> -->
+<test name="Web" junit="false" preserve-order="true">
+  <parameter name = "Browser" value="chrome"/>
+		<groups>	
+			<run>	
+	   			<include name="web" />	
+	        </run>	
+	    </groups>	
+		<classes>
+			<class name="testScripts.Accessibility">	
+				<methods>
+					 
+					 <!-- Pay Bill -->
+				 <!-- <include name="PayBill_AccessibilityAccessing"/> 
+					  <include name="PayBill_Detail"/>
+					  <include name="PayBill_CheckDetail"/>
+					  <include name="PayBill_ChooseAmount"/>
+					  <include name="PayBill_Payment"/>
+					  <include name="PayBill_PaymentCompleted"/>-->
+					  
+					  <!-- Move In -->
+					  <!-- <include name="MoveIn_Access"/>  
+					  <include name="MoveIn_Start"/>   
+					  <include name="MoveIn_CustomerDetails"/>
+					  <include name="MoveIn_PaymentDetail"/>
+					  <include name="MoveIn_Complete"/>-->
+					  
+				  	 <!-- Registration  -->
+					 <!-- <include name="Registration_Access"/> 
+				     <include name="Registration_Start"/>
+				     <include name="Registration_FillDetails"/>
+				     <include name="Registration_ConfirmDetails"/>
+				     <include name="Registration_SetDetails"/>-->
+				
+					<!-- Close Account -->
+					<!-- <include name="CloseAccount_Access"/> 
+					<include name="CloseAccount_Start"/>
+					<include name="CloseAccount_CheckDetails"/>
+					<include name="CloseAccount_MoveOutDate"/>
+					<include name="CloseAccount_PaymentBill"/>
+					<include name="CloseAccount_Forwarding"/>-->
+					
+					
+					<!-- SubmitMeterReading -->
+						<!-- <include name="SubmitMeterReading_Access"/>
+						<include name="SubmitMeterReading_YourDetails"/>
+						<include name="SubmitMeterReading_CheckDetails"/>
+						<include name="SubmitMeterReading_YourReading"/>
+						<include name="SubmitMeterReading_ConfirmReadingDetails"/>-->
+						
+					
+					<!-- Forgot Password  -->
+					<!--  <include name="Reset_Password"/> -->
+					
+					<!-- Auth Close Account -->
+					<!-- <include name="Auth_MoveOutDate"/> 
+					<include name="Auth_BillStep"/> 
+					<include name="Auth_ForwardingAddress"/>
+					<include name="Auth_CloseConfirm"/>-->
+					
+					
+					 <!-- Auth Pay Bill -->
+					 
+					 <!-- <include name="Auth_PayBillAuth_Amount"/>-->
+					 
+					  <!-- Auth Pay Bill -->
+					  <!-- <include name="Auth_SubmitMeterReading_YourReading"/>  
+					  <include name="Auth_SubmitMeterReading_ConfirmReading"/>-->
+					  
+					  <!-- Account DashBoard -->
+					 <!-- <include name="Account_Dashboard"/>  
+					  <include name="Account_Dashboard1"/>
+					   <include name="Account_Dashboard2"/>
+					  <include name="Account_Dashboard3"/>
+					  <include name="Account_Dashboard4"/>
+					  <include name="Account_Dashboard5"/> 
+					  <include name="Account_DashboardPaperlessSetting"/> 
+					  <include name="Account_DashboardDirectDebit"/>
+					   <include name="Account_DashboardContactUs"/>--> 
+				</methods>	
+			</class>
+		</classes>	
+	</test>
+	
+</suite>

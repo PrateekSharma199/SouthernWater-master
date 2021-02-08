@@ -1,0 +1,520 @@
+
+package pageHelper.web;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.dom4j.DocumentException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import core.apiHelper;
+import core.baseDriverHelper;
+import core.webHelper;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.restassured.specification.RequestSpecification;
+import pageFunctions.web.PayBillFunctions;
+import pageHelper.bddDriver;
+import utils.PropertyReader;
+import utils.driver;
+import utils.xmlreader;
+
+public class PayBillPageHelper {
+	public webHelper webDriver;
+	private bddDriver DriverInstance;
+	public PayBillFunctions payFunc;
+	PropertyReader prpertyreader = new PropertyReader();
+	xmlreader loginLoct = new xmlreader("src\\test\\resources\\locators\\Login.xml");
+	String dueAmount;
+
+	public PayBillPageHelper(WebDriver driver) {
+		webDriver = new baseDriverHelper(driver);
+		payFunc = new PayBillFunctions(webDriver);
+		System.out.println("First Constructor");
+
+	}
+
+	public PayBillPageHelper(bddDriver contextSteps) throws Exception {
+		this.DriverInstance = contextSteps;
+		System.out.println(this.DriverInstance);
+		webDriver = new baseDriverHelper(DriverInstance.getWebDriver());
+		payFunc = new PayBillFunctions(webDriver);
+	}
+
+	// Test 1 >> Check the SouthernWater App Access//
+
+	@Given("^User is on SouthernWater Pay Bill page$")
+	public void SouthernWaterPayBill() throws Exception {
+		payFunc.acessUnauthPayBillPage();
+	}
+
+	@When("^User Click on Start$")
+	public void ClickOnStart() throws Exception {
+
+		payFunc.payUnAuthBillStart();
+	}
+
+	@Then("^User move to customer details page")
+	public void Verify_PayBillPage() throws InterruptedException, DocumentException {
+		payFunc.yourDetailsSteps();
+	}
+
+	@And("^Back link is also available")
+	public void Verify_BackButon() throws InterruptedException, DocumentException {
+		payFunc.verifyBackButton();
+	}
+
+	// Test2 >> Verify Pay Bill Back Button Functionality//
+
+	@Given("^User is on SouthernWater Pay Bill detail Page$")
+	public void IAmSouthernWaterPayBillDetail() throws Exception {
+		payFunc.acessUnauthPayBillPage();
+		payFunc.payUnAuthBillStart();
+	}
+
+	@When("^User Click on Back Button$")
+	public void ClickOnBackButton() throws Exception {
+		payFunc.clickBackButton();
+	}
+
+	@Then("^User is navigated to Pay Detail Main Page$")
+	public void MovedToPayBillMainPage() throws DocumentException, Exception {
+		payFunc.mainPageVerification();
+	}
+
+	// Test3 >> Verify Question Mark ToolTip //
+
+	@Given("^User is on SouthernWater PayBill detail Page$")
+	public void SouthernWaterBillPay() throws Exception {
+		payFunc.acessUnauthPayBillPage();
+		payFunc.payUnAuthBillStart();
+
+	}
+
+	@When("^User Click First Time on Question Mark Icons$")
+	public void ClickQuestionIconFirst() throws Exception {
+		payFunc.clickQuestionmarkFirst();
+	}
+
+	@Then("^User Can see the Suggestion Message")
+	public void SuugestionMessageAppear() throws InterruptedException, DocumentException {
+		payFunc.questionMarkMessages();
+	}
+
+	@When("^User Click Second Time on Question Mark Icons$")
+	public void ClickQuestionIconSecond() throws Exception {
+		payFunc.ClickQuestionmarkSecond();
+	}
+
+	@Then("^User Suggestion Message should hide")
+	public void SuugestionMessageDisAppear() throws InterruptedException, DocumentException {
+		payFunc.verifyMessageShouldnotvisible();
+	}
+
+	// Test4 >> Verify Question Mark ToolTip //
+
+	@Given("^User is on SouthernWater Pay Bill page detail Page$")
+	public void SouthernWaterPayBillDetail() throws Exception {
+		payFunc.acessUnauthPayBillPage();
+		payFunc.payUnAuthBillStart();
+	}
+
+	@When("^User Click on Continue of Pay Bill Detail Page$")
+	public void When_I_Click_on_Continue_of_Pay_Bill_Detail_Page() throws Exception {
+		payFunc.payBillDetailClickContinue();
+	}
+
+	@Then("^User Should see the mandatory field Error Message")
+	public void MandatoryMessage() throws InterruptedException, DocumentException {
+		payFunc.mandatoryFieldMessage();
+	}
+
+	// Test5 >> Check the error message for Incorrect Data //
+
+	@Given("^User is on SouthernWater Pay Bill on Your Detail Step$")
+	public void SouthernWaterPayErrorMessage() throws Exception {
+		payFunc.acessUnauthPayBillPage();
+		payFunc.payUnAuthBillStart();
+	}
+
+	@When("^User enter all details$")
+	public void EnteringDetails() throws Exception {
+		payFunc.enterYourDetails("1234567890", "1234567891234", "BDDTest", "BDD@Test.com");
+	}
+
+	@And("^User click on Continue on Detail page$")
+	public void I_click_on_Continue_on_Detail_page() throws InterruptedException, Exception {
+		payFunc.payBillDetailClickContinue();
+	}
+
+	@Then("^User Should see the error Message for incorrect Data")
+	public void IncorrectDataMessage() throws InterruptedException, DocumentException {
+		payFunc.incorrectDateMessage();
+	}
+
+	// Test6 >> Check the error message removed after entering mandatory field //
+	@Given("^User is on SouthernWater Pay Bill with mandatory field error message$")
+	public void SouthernWaterPayMandatroyMessage() throws Exception {
+		payFunc.acessUnauthPayBillPage();
+		payFunc.payUnAuthBillStart();
+		payFunc.payBillDetailClickContinue();
+
+	}
+
+	@When("^User enter all details in form$")
+	public void EnteringDetailsInForms() throws Exception {
+		payFunc.enterYourDetails("1234567890", "1234567891234", "BDDTest", "BDD@Test.com");
+
+	}
+
+	@Then("^User Should not see the error Message for mandatory fields$")
+	public void MandatoryErrorMessageRemoved() throws InterruptedException, DocumentException {
+		payFunc.mandatoryFieldMessageShouldnotVisible();
+
+	}
+
+	// Test
+
+	@Given("^User is Accesing Pay Bill Detail Page$")
+	public void AccessingPayBillPage() throws IOException, InterruptedException {
+		payFunc.acessUnauthPayBillPage();
+
+	}
+
+	@And("^User Click Start Button on Page$")
+	public void StartButtonofPage() throws Exception {
+		payFunc.payUnAuthBillStart();
+	}
+
+	@And("^User Enter Details Customer Number ([^\"]*) Payment Reference ([^\"]*) Last Name ([^\"]*) EmailID ([^\"]*)$")
+	public void IEnterCustDetailWithPaymentRef(String CustomerNumber, String PaymentRef, String LastName, String Email)
+			throws Exception {
+		payFunc.enterYourDetails(CustomerNumber, PaymentRef, LastName, Email);
+	}
+
+	@And("^I Click On Continue Button on Detail Step$")
+	public void ContinueButtonofDetailStep() throws Exception {
+		payFunc.payBillDetailClickContinue();
+
+	}
+
+	@And("^User Click on Continue Button of Check Detail Step")
+	public void And_I_Click_on_Continue_Button_of_Check_Detail_Step() throws Exception {
+		payFunc.clickCheckDetailContinue();
+	}
+
+	@And("User Select Pay another Amount")
+	public void SelectPayAnotherAmount() throws Exception {
+		payFunc.selectAnotherAmount();
+	}
+
+	@And("^User Enter Partial Amount([^\"]*)$")
+	public void EnterPartialAmount(String amount) throws Exception {
+		payFunc.enterAmount(amount);
+	}
+
+	@And("^User Click on Make Payment$")
+	public void ClickMakePayment() throws InterruptedException, DocumentException, Exception {
+		payFunc.clickMakePayment();
+	}
+
+	@When("^User Enter Card Detail ([^\"]*) Name ([^\"]*) Expiry Month ([^\"]*) Expiry Year ([^\"]*)  and SecurityCode ([^\"]*)$")
+	public void EnterPaymentCardDetails(String CardNumber, String NameOnCard, String ExpiryMonth, String ExpiryYear,
+			String code) throws InterruptedException, IOException, DocumentException {
+
+		payFunc.enterPaymentDetails(CardNumber, NameOnCard, ExpiryMonth, ExpiryYear, code);
+	}
+
+	@And("^User Click on Pay Now on Make Payment Step$")
+	public void ClickPayNow() throws Exception {
+		payFunc.clickPayNowButton();
+	}
+
+	@Then("^User Can see Payment Confirmation Message$")
+	public void PyamentConfirmationMessage() throws DocumentException, InterruptedException {
+		payFunc.verifyPaymentConfirmation();
+	}
+
+	@And("^Thankyou Message$")
+	public void ThankyouMessage() throws DocumentException, InterruptedException {
+		payFunc.verifyThankYouMessage();
+	}
+
+	@And("^Transaction with Transaction Number$")
+	public void TransactionMessage() throws DocumentException, InterruptedException {
+		payFunc.tranSactionMessageConfirmation();
+	}
+
+	@And("Payment Reference With Reference Number")
+	public void PaymentReferenceNumber() throws InterruptedException, DocumentException {
+
+		payFunc.paymentReferenceVerification();
+	}
+
+	@And("Same Amount ([^\"]*) as User Pay")
+	public void AmountVerification(String Amount) throws InterruptedException, DocumentException {
+		payFunc.verifyPaidAmount(Amount);
+	}
+
+	// Test Full Amount
+	@Given("^User have Open Pay Bill Detail Page$")
+	public void IHaveOpenPayBillPage() throws IOException, InterruptedException {
+		payFunc.acessUnauthPayBillPage();
+	}
+
+	@And("^User Click Start Link on Page$")
+	public void i_Click_Start_Link_on_Page() throws Exception {
+		payFunc.payUnAuthBillStart();
+	}
+
+	@And("^User enter my details Customer Number ([^\"]*) Payment Reference ([^\"]*) Last Name ([^\"]*) EmailID ([^\"]*)$")
+	public void IEnterMyCustDetailWithPaymentRef(String CustomerNumber, String PaymentRef, String LastName,
+			String Email) throws Exception {
+		payFunc.enterYourDetails(CustomerNumber, PaymentRef, LastName, Email);
+	}
+
+	@And("^User Click On Continue link on Detail Step$")
+	public void And_I_Click_On_Continue_link_on_Detail_Step() throws Exception {
+		payFunc.payBillDetailClickContinue();
+	}
+
+	@And("^User Click on Continue link of Check Detail Step")
+	public void And_I_Click_on_Continue_link_of_Check_Detail_Step() throws Exception {
+		payFunc.clickCheckDetailContinue();
+	}
+
+	@And("User Select Pay Full Amount")
+	public void SelectPayFulllAmount() throws Exception {
+		payFunc.selectFullAmount();
+	}
+
+	@And("^User Click on Make Payment Link$")
+	public void ClickMakePaymentLink() throws InterruptedException, DocumentException, Exception {
+		payFunc.clickMakePayment();
+	}
+
+	@When("^User Enter Payment Card Detail ([^\"]*) Name ([^\"]*) Expiry Month ([^\"]*) Expiry Year ([^\"]*)  and SecurityCode ([^\"]*)$")
+	public void IEnterPaymentCardDetails(String CardNumber, String NameOnCard, String ExpiryMonth, String ExpiryYear,
+			String code) throws InterruptedException, IOException, DocumentException {
+		payFunc.enterPaymentDetails(CardNumber, NameOnCard, ExpiryMonth, ExpiryYear, code);
+	}
+
+	@And("^User Click on Pay Now Button on Make Payment Step$")
+	public void ClickPayNowtoMakePayment() throws Exception {
+		payFunc.clickPayNowButton();
+	}
+
+	@Then("^User Can see Payment Confirmation Message on Page$")
+	public void PyamentConfirmationMessagePage() throws DocumentException, InterruptedException {
+		payFunc.verifyPaymentConfirmation();
+	}
+
+	@And("^Thankyou Message on Page$")
+	public void ThankyouMessageOnPage() throws DocumentException, InterruptedException {
+		payFunc.verifyThankYouMessage();
+	}
+
+	@And("^Transaction with Transaction Number on Receipt$")
+	public void TransactionMessageOnPage() throws DocumentException, InterruptedException {
+		payFunc.tranSactionMessageConfirmation();
+	}
+
+	@And("Payment Reference With Reference Number on Receipt")
+	public void Payment_Reference_With_Reference_Number_On_Receipt() throws InterruptedException, DocumentException {
+
+		payFunc.paymentReferenceVerification();
+	}
+
+	@And("Same Amount as User Pay on Receipt")
+	public void AmountVerificationPage() throws InterruptedException, DocumentException {
+		payFunc.verifyFullAmountonReciept();
+	}
+
+	// Scenario Outline: As a Registered user I Can Pay Partial Amount of My Bill
+
+	@Given("^I Login with my Login Credentials as Email ([^\"]*) and Password ([^\"]*)$")
+	public void LoginWithYouAccountCredentials(String Email, String Password) throws Exception {
+		webDriver.WaitforPageToBeReady();
+		webDriver.OpenURL(prpertyreader.readproperty("LoginUrl"));
+		webDriver.WaitforPageToBeReady();
+		Thread.sleep(10000);
+
+		webDriver.SendKeys(webDriver.getwebelement(loginLoct.getlocator("//locators/EmailId")), Email);
+		webDriver.SendKeys(webDriver.getwebelement(loginLoct.getlocator("//locators/Password")), Password);
+		webDriver.WaitforPageToBeReady();
+		Thread.sleep(5000);
+
+		webDriver.Clickon(webDriver.getwebelement(loginLoct.getlocator("//locators/LoginButton")));
+		webDriver.WaitforPageToBeReady();
+		Thread.sleep(5000);
+	}
+
+	@And("User Click On Make Payment from Dashboard")
+	public void MakePaymentFromDashBoard() throws InterruptedException, DocumentException, Exception {
+		webDriver.Clickon(webDriver.getwebelement(loginLoct.getlocator("//locators/LoginMakeaPayment")));
+		Thread.sleep(5000);
+	}
+
+	@And("User Click Select Pay Another Amount Option")
+	public void SelectPayAnotherAmountOption() throws Exception {
+		payFunc.selectAnotherAmount();
+	}
+
+	@And("^User Enter Amount as ([^\"]*)$")
+	public void EnterPartialAmountForPayment(String amount) throws Exception {
+		payFunc.enterAmount(amount);
+	}
+
+	@And("^User Click on Make Payment Link on Page$")
+	public void MakePaymentLink() throws Exception {
+		payFunc.clickMakePayment();
+	}
+
+	@When("^User Fill Payment Card Detail ([^\"]*) Name ([^\"]*) Expiry Month ([^\"]*) Expiry Year ([^\"]*) and SecurityCode ([^\"]*)$")
+	public void EnterPaymentcardDetails(String CardNumber, String NameOnCard, String Month, String Year, String Code)
+			throws InterruptedException, IOException, DocumentException {
+		payFunc.enterPaymentDetails(CardNumber, NameOnCard, Month, Year, Code);
+	}
+
+	@And("^User Click on Pay Now Button on Make Payment$")
+	public void i_Click_on_Pay_Now_Button_on_Make_Payment() throws Throwable {
+		payFunc.clickPayNowButton();
+	}
+
+	@Then("^User Can see Payment Confirmation Message on Portal$")
+	public void PaymentConfirmationMessages() throws DocumentException, InterruptedException {
+		payFunc.verifyPaymentConfirmation();
+	}
+
+	@And("^User Can See Thankyou Message on Portal$")
+	public void PaymentThankyouMessage() throws DocumentException, InterruptedException {
+		payFunc.verifyThankYouMessage();
+	}
+
+	@And("^User Can See Transaction with Transaction Number on Portal$")
+	public void PaymentTransactionMessageOnPortal() throws DocumentException, InterruptedException {
+		payFunc.tranSactionMessageConfirmation();
+	}
+
+	@And("^User Can See Payment Reference With Reference Number on Portal$")
+	public void PaymentReferenceMessageOnPortal() throws InterruptedException, DocumentException {
+		payFunc.paymentReferenceVerification();
+	}
+
+	@And("^User Can See Same Amount as ([^\"]*) user Pay on Portal$")
+	public void PaymentAmountVerificationOnPortal(String partialAmount) throws InterruptedException, DocumentException {
+		payFunc.verifyPaidAmount(partialAmount);
+	}
+
+	// Scenario Outline: As a Registered user I Can Pay Full Amount of My Bill
+
+	@Given("^I have Login with my Login Credentials as Email ([^\"]*) and Password ([^\"]*)$")
+	public void IhaveLoginWithValidCredentials(String Email, String Password) throws Exception {
+		webDriver.WaitforPageToBeReady();
+		webDriver.OpenURL(prpertyreader.readproperty("LoginUrl"));
+		webDriver.WaitforPageToBeReady();
+		Thread.sleep(10000);
+
+		webDriver.SendKeys(webDriver.getwebelement(loginLoct.getlocator("//locators/EmailId")), Email);
+		webDriver.SendKeys(webDriver.getwebelement(loginLoct.getlocator("//locators/Password")), Password);
+		webDriver.WaitforPageToBeReady();
+		Thread.sleep(5000);
+
+		webDriver.Clickon(webDriver.getwebelement(loginLoct.getlocator("//locators/LoginButton")));
+		webDriver.WaitforPageToBeReady();
+		Thread.sleep(5000);
+	}
+
+	@And("^User Click On Make Payment on Dashboard$")
+	public void DashBoardMakePayment() throws InterruptedException, DocumentException, Exception {
+		webDriver.Clickon(webDriver.getwebelement(loginLoct.getlocator("//locators/LoginMakeaPayment")));
+		Thread.sleep(5000);
+	}
+
+	@And("^User Click Select Pay Full Amount Option$")
+	public void SelectPayFullAmountRadio() throws Exception {
+		payFunc.selectFullAmount();
+	}
+
+	@And("^User Click on Make Payment Link on Portal$")
+	public void IClickMakePaymentLinkOnPage() throws InterruptedException, DocumentException, Exception {
+		payFunc.clickMakePayment();
+	}
+
+	@When("^User Fill Payment Card Detail <Card> Name <Name> Expiry Month <expiryMonth> Expiry Year <expiryYear> and SecurityCode <SecureCode>$")
+	public void FillPaymentCardDetails(String CardNumber, String NameOnCard, String Month, String Year, String Code)
+			throws InterruptedException, IOException, DocumentException {
+		payFunc.enterPaymentDetails(CardNumber, NameOnCard, Month, Year, Code);
+	}
+
+	@And("^User Click on Pay Now Link on Make Payment Step on Portal$")
+	public void IClickPayNowWithCardDetails() throws Exception {
+		payFunc.clickPayNowButton();
+	}
+
+	@Then("^User Should see Payment Confirmation Message$")
+	public void IShouldSeePaymentConfirmationMessageOnPage() throws DocumentException, InterruptedException {
+		payFunc.verifyPaymentConfirmation();
+	}
+
+	@And("^User Should See Thankyou Message$")
+	public void ICanSeeThankyouMessage() throws DocumentException, InterruptedException {
+		payFunc.verifyThankYouMessage();
+	}
+
+	@And("^User Should See Transaction with Transaction$")
+	public void IShouldSeeTransactionMessages() throws DocumentException, InterruptedException {
+		payFunc.tranSactionMessageConfirmation();
+	}
+
+	@And("^User Should See Payment Reference With Reference$")
+	public void IShouldSeePaymentReference() throws InterruptedException, DocumentException {
+		payFunc.paymentReferenceVerification();
+	}
+
+	@And("^User Should See Payment Amount as user Pay on Portal$")
+	public void IShouldSeePaymentAmountVerification() throws InterruptedException, DocumentException {
+		payFunc.verifyFullAmountonReciept();
+	}
+
+	// New
+
+	@Given("^User is on The SouthernWater UnAuth Pay Bill Page$")
+	public void i_have_Open_The_SouthernWater_UnAuth_Pay_Bill_Page() throws Throwable {
+
+		payFunc.acessUnauthPayBillPage();
+	}
+
+	@Given("^User already Click on Start Button$")
+	public void i_already_Click_on_Start_Button() throws Throwable {
+		payFunc.payUnAuthBillStart();
+	}
+
+	@When("^User Perform Click Action on Continue Button of Pay Bill Detail Page$")
+	public void i_Perform_Click_Action_on_Continue_Button_of_Pay_Bill_Detail_Page() throws Throwable {
+		payFunc.payBillDetailClickContinue();
+	}
+
+	@Then("^User should not be able to Proceed & System throw the mandatory field Error Message$")
+	public void i_am_not_able_to_Proceed_System_throw_the_mandatory_field_Error_Message() throws Throwable {
+		payFunc.mandatoryFieldMessage();
+	}
+
+	@And("^User Do Click Action on Continue Button of Pay Bill Detail Page$")
+	public void i_Do_Click_Action_on_Continue_Button_of_Pay_Bill_Detail_Page() throws Throwable {
+		payFunc.payBillDetailClickContinue();
+	}
+
+	@And("^User Do Click Action on Continue Button of Check Detail Step$")
+	public void i_Do_Click_Action_on_Continue_Button_of_Check_Detail_Step() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		payFunc.clickCheckDetailContinue();
+	}
+}
