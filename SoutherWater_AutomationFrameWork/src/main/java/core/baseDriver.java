@@ -50,47 +50,44 @@ public class baseDriver implements apiDriver, webDriver,desktopDriver,mobileDriv
 		if(!Grid==true) {
 		if(browser.equalsIgnoreCase("chrome"))
 		{
-
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			ChromeOptions options = new ChromeOptions();
-			if(proxyRequired==true) {
-				Proxy proxy = new Proxy();
-				proxy.setAutodetect(false);
-				proxy.setHttpProxy("localhost:8777");
-				proxy.setSslProxy("localhost:8777");
-//			static Logger log = Logger.getLogger(ZapLoginTest.class.getName());
-				final String ZAP_PROXYHOST = "localhost";
-				final int ZAP_PROXYPORT = 8777;
-				//final String ZAP_APIKEY = null;
-
-//
-				final String[] policyNames = {"directory-browsing", "cross-site-scripting", "sql-injection",
-						"path-traversal", "remote-file-inclusion", "server-side-include", "script-active-scan-rules",
-						"server-side-code-injection", "external-redirect", "crlf-injection"};
-				int currentScanID;
-				ZapScanner = new ClientApi(ZAP_PROXYHOST, ZAP_PROXYPORT, null);
-				System.out.println("Zap Scanner" + ZapScanner);
-				options.setCapability(CapabilityType.PROXY, proxy);
-				options.addArguments("--ignore-certificate-errors");
-			}
-			Map<String, Object> prefs = new HashMap<String, Object>();
-			prefs.put("profile.default_content_setting_values.notifications", 2);
-			prefs.put("profile.default_content_setting_values.popups", 1);
-			prefs.put("download.default_directory", System.getProperty("user.dir")+"/src/Data/Downloads");
-
-			options.setExperimentalOption("prefs", prefs);
-			options.addArguments("--start-maximized");
-			options.addArguments("disable-infobars");
-			options.addArguments("--disable-popup-blocking");
+			/*
+			 * if(proxyRequired==true) { Proxy proxy = new Proxy();
+			 * proxy.setAutodetect(false); proxy.setHttpProxy("localhost:8777");
+			 * proxy.setSslProxy("localhost:8777"); // static Logger log =
+			 * Logger.getLogger(ZapLoginTest.class.getName()); final String ZAP_PROXYHOST =
+			 * "localhost"; final int ZAP_PROXYPORT = 8777; //final String ZAP_APIKEY =
+			 * null;
+			 * 
+			 * // final String[] policyNames = {"directory-browsing",
+			 * "cross-site-scripting", "sql-injection", "path-traversal",
+			 * "remote-file-inclusion", "server-side-include", "script-active-scan-rules",
+			 * "server-side-code-injection", "external-redirect", "crlf-injection"}; int
+			 * currentScanID; ZapScanner = new ClientApi(ZAP_PROXYHOST, ZAP_PROXYPORT,
+			 * null); System.out.println("Zap Scanner" + ZapScanner);
+			 * options.setCapability(CapabilityType.PROXY, proxy);
+			 * options.addArguments("--ignore-certificate-errors"); } Map<String, Object>
+			 * prefs = new HashMap<String, Object>();
+			 * prefs.put("profile.default_content_setting_values.notifications", 2);
+			 * prefs.put("profile.default_content_setting_values.popups", 1);
+			 * prefs.put("download.default_directory",
+			 * System.getProperty("user.dir")+"/src/Data/Downloads");
+			 * 
+			 * options.setExperimentalOption("prefs", prefs);
+			 * //options.addArguments("--start-maximized");
+			 * options.addArguments("disable-infobars");
+			 * options.addArguments("--disable-popup-blocking");
+			 */
 
 			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
 
-			options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-			options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-			capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "none");
-			LoggingPreferences logs = new LoggingPreferences(); 
-		    logs.enable(LogType.DRIVER, Level.ALL); 
-			capabilities.setCapability(CapabilityType.LOGGING_PREFS, logs);
+			//options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+			//options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+			//capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "none");
+			//LoggingPreferences logs = new LoggingPreferences(); 
+		    //logs.enable(LogType.DRIVER, Level.ALL); 
+			//capabilities.setCapability(CapabilityType.LOGGING_PREFS, logs);
 
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			System.setProperty("webdriver.chrome.driver","chromedriver.exe");
