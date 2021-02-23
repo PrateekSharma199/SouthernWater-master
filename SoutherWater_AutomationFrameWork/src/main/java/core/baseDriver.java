@@ -79,9 +79,11 @@ public class baseDriver implements apiDriver, webDriver,desktopDriver,mobileDriv
 			 * options.addArguments("disable-infobars");
 			 * options.addArguments("--disable-popup-blocking");
 			 */
-
+			options.addArguments("--no-sandbox");
 			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
-
+			
+			options.addArguments("--disable-dev-shm-usage");
+			
 			options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 			options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
 			capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "none");
