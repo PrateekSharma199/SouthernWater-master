@@ -82,12 +82,12 @@ public class baseDriver implements apiDriver, webDriver,desktopDriver,mobileDriv
 
 			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
 
-			//options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-			//options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-			//capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "none");
-			//LoggingPreferences logs = new LoggingPreferences(); 
-		    //logs.enable(LogType.DRIVER, Level.ALL); 
-			//capabilities.setCapability(CapabilityType.LOGGING_PREFS, logs);
+			options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+			options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+			capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "none");
+			LoggingPreferences logs = new LoggingPreferences(); 
+		    logs.enable(LogType.DRIVER, Level.ALL); 
+			capabilities.setCapability(CapabilityType.LOGGING_PREFS, logs);
 
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			System.setProperty("webdriver.chrome.driver","chromedriver.exe");
