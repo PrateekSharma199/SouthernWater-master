@@ -58,7 +58,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 		<!-- End Junit Dependency -->
 		<!-- Start Selenium Dependency -->
@@ -234,7 +234,7 @@
   <groupId>org.testng</groupId>
   <artifactId>testng</artifactId>
   <version>6.10</version>
-  <scope>test</scope>
+  <scope>compile</scope>
 </dependency>
 		<!-- End testNG Dependency -->
 		<dependency>
