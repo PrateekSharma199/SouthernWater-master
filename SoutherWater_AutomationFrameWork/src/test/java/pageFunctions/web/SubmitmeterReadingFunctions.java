@@ -108,9 +108,8 @@ public class SubmitmeterReadingFunctions
 	public void verifyCustomerDetails(String custNum, String custRefNum, String custLname) throws Exception {
 		pageDriver.VerifyText(pageDriver.getwebelement(payBillLoct.getlocator("//locators/CheckYourDetailsHeader")),
 				"Check your details");
-		pageDriver.VerifyText(
-				pageDriver.getwebelement(payBillLoct.getlocator("//locators/VerifyYourMeterReadingLabel")),
-				"Your meter reading");
+		//pageDriver.VerifyText(pageDriver.getwebelement(payBillLoct.getlocator("//locators/VerifyYourMeterReadingLabel")),
+		//		"Your meter reading");
 		pageDriver.VerifyText(pageDriver.getwebelement(payBillLoct.getlocator("//locators/VerifyCustomerNumber")),
 				custNum);
 		pageDriver.VerifyText(

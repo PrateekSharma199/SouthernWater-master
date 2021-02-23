@@ -357,7 +357,7 @@ public class MoveInFunction {
 	public void selectAddress() throws InterruptedException, DocumentException, Exception {
 
 		Select DisplayAddress = new Select(pageDriver.getwebelement(MoveInLoct.getlocator("//locators/SelectAddress")));
-		DisplayAddress.selectByIndex(9);
+		DisplayAddress.selectByIndex(13);
 
 	}
 

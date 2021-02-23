@@ -28,6 +28,7 @@ Scenario Outline: As a Registered user I Can Pay Full Amount of My Bill
 		When User Fill Payment Card Detail <Card> Name <Name> Expiry Month <expiryMonth> Expiry Year <expiryYear> and SecurityCode <SecureCode>
 		And User Click on Pay Now Button on Make Payment
 		Then User Should see Payment Confirmation Message
+		
 		And User Should See Thankyou Message
 		And User Should See Transaction with Transaction
 		And User Should See Payment Reference With Reference

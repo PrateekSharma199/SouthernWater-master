@@ -1,19 +1,19 @@
 Feature: This feature file contains test scenarios related to movein with a change address request
   
-	
+	@SIT
   Scenario: To verify the option to change address on move in page
     Given User has logged in successfully
     When User Click on 'Tell us you are moving' from menu
     Then User should see option to Change address on move in page
 
-  
+  @SIT
   Scenario: To verify user navigation to moving from page 	
    Given User has logged in successfully
    When User Click on 'Tell us you are moving' from menu
    And User click on Change your address button
    Then User should be navigated to moving from page
    
-  
+  @SIT
   Scenario: To verify validation message when user enter move out date more than 30 days from current date
    Given User has logged in successfully
    When User Click on 'Tell us you are moving' from menu

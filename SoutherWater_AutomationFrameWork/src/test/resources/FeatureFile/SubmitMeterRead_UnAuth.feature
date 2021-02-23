@@ -32,4 +32,4 @@ Scenario: To Verify customer meter reading details
   
  Examples:
     |CustomerNumber|PayRef|LastName|
-    |10470201|0004012407196|DOWNHYLL|
+    |11860577|0004508310701|POCKETT|

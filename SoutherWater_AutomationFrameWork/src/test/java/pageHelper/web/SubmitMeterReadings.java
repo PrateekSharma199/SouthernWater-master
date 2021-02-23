@@ -101,7 +101,7 @@ public class SubmitMeterReadings {
 
 	@When("^User submit all the details of customer")
 	public void ClickOnSubmitButtonAfterSubmitingCustomerDetails() throws Exception {
-		subMeter.enterCustomerDetails("21301653", "4505530617", "Updahyll", "test@gmail.com");
+		subMeter.enterCustomerDetails("21301653", "004505530617", "Updahyll", "test@gmail.com");
 		subMeter.continueClick();
 	}
 

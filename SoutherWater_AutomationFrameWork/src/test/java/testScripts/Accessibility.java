@@ -535,7 +535,7 @@ public class Accessibility extends driver
 			Meter.get().I_Click_again_on_Continue();
 			Meter.get().I_Can_Enter_Updated_Meter_Reading();
 			Meter.get().I_can_click_to_continue_Button_of_Your_meter_reading_page();
-			Meter.get().I_can_view_updated_meter_reading_on_Confirm_meter_reading();
+			//Meter.get().I_can_view_updated_meter_reading_on_Confirm_meter_reading();
 			Run_AccessibilityTest();
 		} catch (Exception ex) {
 			System.out.println("Error : " + ex.toString());
@@ -643,7 +643,7 @@ public class Accessibility extends driver
 			Run_AccessibilityTest();
 			Account.get().click_on_Your_Account_Option();
 			Run_AccessibilityTest();
-			Account.get().i_Click_on_Close_your_account_from_Dashboard();
+			//Account.get().i_Click_on_Close_your_account_from_Dashboard();
 			Run_AccessibilityTest();
 		} catch (Exception ex) {
 			System.out.println("Error : " + ex.toString());
@@ -726,7 +726,7 @@ public class Accessibility extends driver
 			Login.get().ClickOnLogin();
 			
 			Account.get().click_on_Your_Account_Option();
-			Account.get().i_Click_on_Close_your_account_from_Dashboard();
+		//	Account.get().i_Click_on_Close_your_account_from_Dashboard();
 			RegisterUser.get().i_Click_Close_your_account_from_you_are_moving();
 			Run_AccessibilityTest();
 			
@@ -745,7 +745,7 @@ public class Accessibility extends driver
 			Login.get().EnterCredentials("kumar.devesh82@yahoo.com", "Apple@123");
 			Login.get().ClickOnLogin();
 			Account.get().click_on_Your_Account_Option();
-			Account.get().i_Click_on_Close_your_account_from_Dashboard();
+		//	Account.get().i_Click_on_Close_your_account_from_Dashboard();
 			RegisterUser.get().i_Click_Close_your_account_from_you_are_moving();
 			RegisterUser.get().i_Enter_the_MoveOut_Date();
 			RegisterUser.get().i_Click_On_Continue_of_Move_Out_Step();
@@ -765,7 +765,7 @@ public class Accessibility extends driver
 			Login.get().EnterCredentials("kumar.devesh82@yahoo.com", "Apple@123");
 			Login.get().ClickOnLogin();
 			Account.get().click_on_Your_Account_Option();
-			Account.get().i_Click_on_Close_your_account_from_Dashboard();
+			//Account.get().i_Click_on_Close_your_account_from_Dashboard();
 			RegisterUser.get().i_Click_Close_your_account_from_you_are_moving();
 			RegisterUser.get().i_Enter_the_MoveOut_Date();
 			RegisterUser.get().i_Click_On_Continue_of_Move_Out_Step();
@@ -790,7 +790,7 @@ public class Accessibility extends driver
 			Login.get().EnterCredentials("kumar.devesh82@yahoo.com", "Apple@123");
 			Login.get().ClickOnLogin();
 			Account.get().click_on_Your_Account_Option();
-			Account.get().i_Click_on_Close_your_account_from_Dashboard();
+	//		Account.get().i_Click_on_Close_your_account_from_Dashboard();
 			RegisterUser.get().i_Click_Close_your_account_from_you_are_moving();
 			RegisterUser.get().i_Enter_the_MoveOut_Date();
 			RegisterUser.get().i_Click_On_Continue_of_Move_Out_Step();

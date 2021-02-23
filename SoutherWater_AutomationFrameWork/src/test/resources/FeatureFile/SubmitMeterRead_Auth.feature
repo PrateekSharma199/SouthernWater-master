@@ -8,7 +8,7 @@ Feature: Auth Submit Meter Reading
     
  Examples:
     |Email|Password|
-    |kumar.devesh82@yahoo.com|Apple@123|
+    |historydd@yopmail.com|360@Logica|
     
 @SIT
  Scenario Outline: Authorized Submit Meter Page Back Button
@@ -20,7 +20,7 @@ Feature: Auth Submit Meter Reading
     
  Examples:
     |Email|Password|
-    |kumar.devesh82@yahoo.com|Apple@123|    
+    |historydd@yopmail.com|360@Logica|    
     
 @SIT
   Scenario Outline: Login with Valid credentials to verify updated Meter Reading and today date 
@@ -34,7 +34,7 @@ Feature: Auth Submit Meter Reading
     
  Examples:
     |Email|Password|
-    |kumar.devesh82@yahoo.com|Apple@123|
+    |historydd@yopmail.com|360@Logica|
   
   @SIT
   Scenario Outline: Login with Valid credentials to update meter reading  
@@ -47,6 +47,6 @@ Feature: Auth Submit Meter Reading
   
  Examples:
     |Email|Password|
-    |kumar.devesh82@yahoo.com|Apple@123|
+    |historydd@yopmail.com|360@Logica|
     
  

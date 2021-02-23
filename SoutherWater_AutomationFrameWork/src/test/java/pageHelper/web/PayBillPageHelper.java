@@ -123,7 +123,7 @@ public class PayBillPageHelper {
 	@Given("^User is on SouthernWater Pay Bill page detail Page$")
 	public void SouthernWaterPayBillDetail() throws Exception {
 		payFunc.acessUnauthPayBillPage();
-		payFunc.payUnAuthBillStart();
+		
 	}
 
 	@When("^User Click on Continue of Pay Bill Detail Page$")

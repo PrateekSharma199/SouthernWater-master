@@ -9,14 +9,11 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
     Then User can see the QuickLinks <Links> on Dashboard
     And User can see Customer Number,Payment Reference on Dashboard
     And User Can see Customer Email ID, Correspondence Address under your profile section
-    And User Can see Last Meter Reading, Meter Number, Date last Read
     And User Can see Property address, Your Services
-    And User Can see Latest Bill, Bill Amount, Bill Date
-    And User Can see Amount Due, Amount, date
 
     Examples: 
       | CustType | Links                                                                                                |
-      | NDD      | Set up a Direct Debit, View bills/account statement ,View payment history ,Change paperless settings |
+      | NDD      | View account statement,View payment history,View billing history,Change paperless settings |
 
   @SIT
   Scenario Outline: Verify Dashboard Menu Items
@@ -28,7 +25,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
 
     Examples: 
       | CustType | MenuItem                                                                                                                                                                   |
-      | NDD      | Make a payment , Set up / Amend a Direct Debit ,View bills / Account statement ,Payment history,Submit a meter reading,Paperless settings,Tell us you_re moving,Update profile |
+      | NDD      | Make a payment,Set up / Amend a Direct Debit ,View account statement ,View payment history,Paperless settings,Update profile,View billing history |
 
   @SIT
   Scenario Outline: Verify Logout Functionality
@@ -55,7 +52,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
 
     Examples: 
       | CustType |
-      | NDD      |
+      | MDD|
 
   @SIT
   Scenario Outline: Verify Make a payment Navigation
@@ -77,7 +74,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
     When Click on Login
     And User Click on 'Your Account' Option
     And User Click on 'Tell us you are moving' from Dashboard
-    Then User Should Move to Close Account Page
+    Then User Should Move to You are moving screen
 
     Examples: 
       | CustType |
@@ -96,18 +93,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | NDD      |
 
-  @SIT
-  Scenario Outline: Verify Direct Debit Navigation
-    Given User is on login page
-    And User Login with <CustType> Credentials
-    When Click on Login
-    And User Click on 'Your Account' Option
-    And User Click Set Up Direct Debit
-    Then User Should move to Setup Direct Debit Page
-
-    Examples: 
-      | CustType |
-      | NDD      |
+  
 
   @SIT
   Scenario Outline: Verify Your Profile Navigation
@@ -146,7 +132,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
 
     Examples: 
       | CustType |
-      | NDD      |
+      | MDD      |
 
   @SIT
   Scenario Outline: Verify Submit Meter Navigation by quick link on Dashboard
@@ -158,21 +144,21 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
 
     Examples: 
       | CustType |
-      | NDD      |
+      | MDD      |
 
   @SIT
-  Scenario Outline: Verify Close Account Navigation by quick link on Dashboard
+  Scenario Outline: Verify You are moving Navigation by quick link on Dashboard
     Given User is on login page
     And User Login with <CustType> Credentials
     When Click on Login
     And User Click on 'Tell us you are moving' button from Dashboard
-    Then User Should Move to Close Account Page
+    Then User Should Move to You are moving screen
 
     Examples: 
       | CustType |
       | NDD      |
 
-  @SIT
+ 
   Scenario Outline: Verify Make a payment Navigation by quick link on Dashboard
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -248,7 +234,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
     #And I Can see Amount Due, Amount, date
     Examples: 
       | CustType | Links                                                                                          |
-      | UMNDD    | Make a payment , View bills/account statement ,View payment history ,Change paperless settings |
+      | UMNDD    | Make a payment ,View billing history, View account statement ,View payment history ,Change paperless settings |
 
   @SIT
   Scenario Outline: Verify Struggling to pay Navigation from Dashboard
@@ -261,3 +247,5 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
     Examples: 
       | CustType |
       | UMNDD    |
+      
+      

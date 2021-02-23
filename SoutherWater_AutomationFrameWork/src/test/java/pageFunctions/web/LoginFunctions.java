@@ -50,11 +50,38 @@ public class LoginFunctions {
 		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/Password")), password);
 
 	}
+	
+	public void loginPortalMeteredCash() throws Exception
+	{
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/EmailId")), "history@yopmail.com");
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/Password")),"360@Logica");
+	}
 	public void loginPortal() throws Exception
 	{
 		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/EmailId")), "kumar.devesh82@yahoo.com");
 		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/Password")),"Apple@123");
 	}
+	public void loginPortalAssessed() throws Exception
+	{
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/EmailId")), "assesedauth@yopmail.com");
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/Password")),"360@Logica");
+	}
+	public void loginPortalMetered() throws Exception
+	{
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/EmailId")), "ocazyqell-9482@yopmail.com");
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/Password")),"360@Logica");
+	}
+	public void loginPortalUnMetered() throws Exception
+	{
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/EmailId")), "devesh.kumar@southernwater.co.uk");
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/Password")),"360@Logica");
+	}
+	public void loginPortalDD() throws Exception
+	{
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/EmailId")), "historydd@yopmail.com");
+		pageDriver.SendKeys(pageDriver.getwebelement(loginLoct.getlocator("//locators/Password")),"360@Logica");
+	}
+	
 	
 	public void loginCustomerType(String Custtype) throws Exception 
 	{

@@ -12,9 +12,13 @@
 <LoginError>//div[@class='feedback-box mb-4 feedback-box--harley']//p</LoginError>
 <ForgotMessageEmail>//div[@class='sw-body-container']//p//strong</ForgotMessageEmail>
 <ForgotMessage>//div[@class='sw-body-container']//p</ForgotMessage>
-<LoginMakeaPayment>//a[text()='Make a payment']</LoginMakeaPayment>
+<LoginMakeaPayment>//a[contains(@href,'pay-bill') and @class='landing-link']</LoginMakeaPayment>
 <SubmitMeterReading>//a[text()='Submit a meter reading']</SubmitMeterReading>
 <CloseAccount>//a[text()='Close your account']</CloseAccount>
+
+<FinalBill>//h1[contains(text(),'final bill')]</FinalBill>
+<NoMeterText>//p[contains(text(),'water meter')]</NoMeterText>
+
 
 <LogoutComplete>//p[contains(text(),'logged out')]</LogoutComplete>
 <YourMeterReadingPageHeading>//div/h3[contains(text(),'Last meter reading')]</YourMeterReadingPageHeading>
@@ -40,6 +44,7 @@
 <MenuClick>//button[@aria-controls="accountNav"]</MenuClick>
 <DDReview>//div[@class="direct-debit-review"]</DDReview>
 <MovingClick>//span[contains(text(),'moving')]</MovingClick>
+<TellUs>//h1[contains(text(),'Tell us')]</TellUs>
 <AccountButtons>//ul[@id='nav-icons']//button[contains(.,'DisplayText')]</AccountButtons>
 <ChangeAddress>//a[contains(text(),'Change your address')]</ChangeAddress>
 <MovingFrom>//h1[contains(text(),'Moving from')]</MovingFrom>
@@ -47,7 +52,7 @@
 <AccountDashBoardLink>//div[@class='sw-body-container']//h2//span[text()='Dashboard']//parent::a</AccountDashBoardLink>
 <LogOut>//div[@class='sw-body-container']//h2//span[text()='Log out']//parent::a</LogOut>
 <DashBoardSection>//div[contains(@class,'dashboard-top-section-content')]</DashBoardSection>
-<CustomerNumber>//span[contains(text(),'104')]</CustomerNumber>
+<CustomerNumber>//span[contains(text(),'118')]</CustomerNumber>
 <CustomerNumberLabel>(//div[contains(@class,'customer-number-section')]//strong)[1]</CustomerNumberLabel>
 <PaymentRefNumber>//span[contains(text(),'00')]</PaymentRefNumber>
 <PaymentRefNumberLabel>(//div[contains(@class,'customer-number-section')]//strong)[2]</PaymentRefNumberLabel>
@@ -61,13 +66,27 @@
 <QuickLinkFooterButton>//div[@class='tiles-bottom mt-2']//a[contains(text(),'DisplayText')]</QuickLinkFooterButton>
 <LatestBillMainHeading>//h1[text()='Latest bill']</LatestBillMainHeading>
 <LatestBillAmount>//h1[text()='Latest bill']/following::h2</LatestBillAmount>
+<PreviousBill>//p[contains(text(),'Previous bill')]/following::p[contains(text(),'£')]</PreviousBill>
 <LatestBillDateLabel>//h1[text()='Latest bill']/following::p</LatestBillDateLabel>
 <LatestBillDate>//h1[text()='Latest bill']/parent::div//p[2]</LatestBillDate>
 <BillAmount>//h1[text()='Amount due']/parent::div/h2</BillAmount>
 <BillAmountDueHeading>//h1[text()='Amount due']</BillAmountDueHeading>
 <BillAmountDueDate>//h1[text()='Amount due']/parent::div/p/b</BillAmountDueDate>
 
+
+<BillHistoryAmount>//th[contains(text(),'Amount')]/following::td[3]</BillHistoryAmount>
+<BillHistoryPrevious>//th[contains(text(),'Amount')]/following::td[6]</BillHistoryPrevious>
+<DirectDebitPayment>//div[contains(text(),'Direct Debit')][1]</DirectDebitPayment>
+<PaymentReceived>//div[contains(text(),'Payment received')][1]</PaymentReceived>
+<DirectDDHeading>//h1[contains(@class,'header') and contains(text(),'Direct Debit')]</DirectDDHeading>
+
+<AmendDDDashboard>//a[@to='/amend-direct-debit']</AmendDDDashboard>
+<SetupDDDashboard>//a[contains(@href,'direct-debit') and contains(@class,'landing')]</SetupDDDashboard>
+
 <MeterReadingHeading>//h1[text()='Meter readings']</MeterReadingHeading>
+<LastMeterReadingValue>//p[contains(text(),'Last meter')]/following-sibling::p[1]</LastMeterReadingValue>
+<MeterNumberValue>//p[contains(text(),'Meter number')]/following-sibling::p[1]</MeterNumberValue>
+<LastReadDate>//p[contains(text(),'last read')]/following-sibling::p[1]</LastReadDate>
 <UnmeterHeading>//p[contains(text(),' This account is not metered.')]</UnmeterHeading>
 <PayHelpPageHeading>//h1[text()='Help paying your bill']</PayHelpPageHeading>
 <MeterReadSectionText>//p[text()='Last meter reading']/parent::div/p[@class='dashboard-tile-text']</MeterReadSectionText>
@@ -76,7 +95,7 @@
 <PaperlessOnline>//input[@type='radio']/following::label[contains(text(),'online')]</PaperlessOnline>
 <PaperlessPost>//input[@type='radio']/following::label[contains(text(),'address')]</PaperlessPost>
 <PaperlessUpdate>//button[contains(text(),'Update')]</PaperlessUpdate>
-<SetupDirectDebitHeading>//h1[text()='Set up Direct Debit']</SetupDirectDebitHeading>
+<SetupDirectDebitHeading>//h1[contains(text(),'Direct Debit')]</SetupDirectDebitHeading>
 <AccountHolderName>//input[@id="accountHolderName"]</AccountHolderName>
 <sortcodeone>//input[@id="sortCodeOne"]</sortcodeone>
 <sortcodetwo>//input[@id="sortCodeTwo"]</sortcodetwo>
@@ -101,8 +120,11 @@
 <PropertyAddress>//p[text()='Property address']/parent::div/div</PropertyAddress>
 <YourServiceLabel>//p[text()='Your services']</YourServiceLabel>
 <YourServiceType>//p[text()='Your services']/following::p</YourServiceType>
-<BillStatement>//h1[text()='View bills / Account statement']</BillStatement>
+<BillStatement>//h1[contains(text(),'account statement')]</BillStatement>
 <MenuDiv>//div[@id='accountNav']</MenuDiv>
 <YourAccount>//button[contains(text(),'Your Account')]</YourAccount>
+
+
+
 </locators>
 

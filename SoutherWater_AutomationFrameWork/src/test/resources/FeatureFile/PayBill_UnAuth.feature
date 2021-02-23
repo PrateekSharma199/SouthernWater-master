@@ -44,7 +44,7 @@ Scenario: Check the error message removed after entering mandatory field
 		Then User Should not see the error Message for mandatory fields
 		
 
-@SmokeTest
+@SIT
 Scenario Outline: As a Unregistered user User Can Pay Partial Amount of My Bill
 		Given User is Accesing Pay Bill Detail Page
 		And User Click Start Button on Page
