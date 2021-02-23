@@ -93,7 +93,7 @@ public class baseDriver implements apiDriver, webDriver,desktopDriver,mobileDriv
 			capabilities.setCapability(CapabilityType.LOGGING_PREFS, logs);
 
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-			System.setProperty("webdriver.chrome.driver","./chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","chromedriver.exe");
 			dr= new ChromeDriver(capabilities);
 			dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			dr.manage().deleteAllCookies();
