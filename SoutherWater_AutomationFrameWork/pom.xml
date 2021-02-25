@@ -26,6 +26,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.19.1</version>
 				<configuration>
+				<forkCount>3</forkCount>
+				<reuseForks>true</reuseForks>
+				
 					<!-- Suite testng xml file to consider for test execution -->
 					<suiteXmlFiles>
 						<suiteXmlFile>${Environment}</suiteXmlFile>
