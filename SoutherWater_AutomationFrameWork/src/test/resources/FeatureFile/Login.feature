@@ -1,7 +1,7 @@
 Feature: This feature file contains scenarios related to login functionality
  
 
-@SIT
+@SIT123
   Scenario Outline: To verify user is not able Login with incorrect credentials 
     Given User is on login page
     When User Enter <Email> and <Password> into respective fields
@@ -13,7 +13,7 @@ Feature: This feature file contains scenarios related to login functionality
     |Email|Password|
     |abc@yahoo.com|xyz123|
    
-@SIT
+@SIT123
   Scenario Outline: To verify user is able Login with Valid credentials   
     Given User is on login page
     When User Enter <Email> and <Password> into respective fields
@@ -25,7 +25,7 @@ Feature: This feature file contains scenarios related to login functionality
     |Email|Password|
     |devesh.kumar@southernwater.co.uk|360@Logica|
     
-@SIT
+@SIT123
   Scenario: To verify user navigation to move on Registration Page    
     Given User is on login page
     When User Click on Registration 

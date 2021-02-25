@@ -1,6 +1,6 @@
 Feature: The purpose of this feature is to test the Close Account Functionality of UnRegistered User
 
-@SIT
+@SIT123
 Scenario Outline: Verify that an unregistered user is able to close account successfully
 Given User is on UnRegisterd User Close Account Page 
 And User Click on Start of Close Account Page

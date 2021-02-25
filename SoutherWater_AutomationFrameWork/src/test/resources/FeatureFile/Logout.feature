@@ -1,6 +1,6 @@
 Feature: This feature file consist of scenarios related to logout functionality
  
- @SIT
+ @SIT123
   Scenario Outline: To verify Registered User Can Log out from Protal   
     Given User is on account dashboard using Credentials <Email> and <Password>
     When User Click on Logout from Dashboard
@@ -12,7 +12,7 @@ Feature: This feature file consist of scenarios related to logout functionality
     |Email|Password|
     |devesh.kumar@southernwater.co.uk|360@Logica|   
  
-  @SIT
+  @SIT123
   Scenario Outline: To verify User can login again after logout
     Given User is on account dashboard using Credentials <Email> and <Password>
     And User Logout from SW Portal

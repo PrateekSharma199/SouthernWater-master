@@ -10,7 +10,7 @@ Feature: Auth Submit Meter Reading
     |Email|Password|
     |historydd@yopmail.com|360@Logica|
     
-@SIT
+@SIT123
  Scenario Outline: Authorized Submit Meter Page Back Button
     Given User is on account dashboard using Credentials <Email> and <Password>
     When User Click on 'Submit a meter reading' from Dashboard
@@ -22,7 +22,7 @@ Feature: Auth Submit Meter Reading
     |Email|Password|
     |historydd@yopmail.com|360@Logica|    
     
-@SIT
+@SIT123
   Scenario Outline: Login with Valid credentials to verify updated Meter Reading and today date 
     Given User is on account dashboard using Credentials <Email> and <Password>
     When User Click on 'Submit a meter reading' from Dashboard
@@ -36,7 +36,7 @@ Feature: Auth Submit Meter Reading
     |Email|Password|
     |historydd@yopmail.com|360@Logica|
   
-  @SIT
+  @SIT123
   Scenario Outline: Login with Valid credentials to update meter reading  
     Given User is on account dashboard using Credentials <Email> and <Password>
     When User Click on 'Submit a meter reading' from Dashboard

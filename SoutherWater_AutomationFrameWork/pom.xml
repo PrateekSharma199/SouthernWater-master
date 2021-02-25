@@ -14,7 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<cucumber-jvm.version>4.3.0</cucumber-jvm.version>
-		<Environment>src/test/testNGSuites/TDDSuite.xml</Environment>
+		<Environment>src/test/testNGSuites/BDDSuite.xml</Environment>
 	</properties>
 	<build>
 		<!-- Source directory configuration -->

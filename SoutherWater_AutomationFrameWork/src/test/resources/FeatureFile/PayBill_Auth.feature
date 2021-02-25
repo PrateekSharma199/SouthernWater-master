@@ -1,6 +1,6 @@
 Feature: This feature file contains scenarios related to Pay Bill Auth functionality
 
-@SIT
+@SIT123
 Scenario Outline: To verify as a Registered user I Can Pay Partial Amount of My Bill
 	 	Given User is on account dashboard using Credentials <Email> and <Password>
 		And User Click on 'Make a payment' from Dashboard
@@ -19,7 +19,7 @@ Scenario Outline: To verify as a Registered user I Can Pay Partial Amount of My 
     |Email|Password|Amount|Card|Name|expiryMonth|expiryYear|SecureCode|
     |kumar.devesh82@yahoo.com|Apple@123|1|122000000000003|Fiona Vardy|08|27|453|
     
- @SIT
+ @SIT123
 Scenario Outline: As a Registered user I Can Pay Full Amount of My Bill
 		Given User is on account dashboard using Credentials <Email> and <Password>
 		And User Click on 'Make a payment' from Dashboard

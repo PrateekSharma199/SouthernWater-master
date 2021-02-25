@@ -1,6 +1,6 @@
 Feature: This feature file contains scenario related to Forgot Password funtionality
 
-@SIT
+@SIT123
   Scenario: To verify user is able to reset the password  
     Given User is on login page
     When User Click on Forgot Password
@@ -8,7 +8,7 @@ Feature: This feature file contains scenario related to Forgot Password funtiona
     And User Should See Email address field for reset password
     And Back to login, Continue links 
   
-@SIT
+@SIT123
   Scenario Outline: To verify user is notified that Reset Password link is sent on mail   
     Given User is at Reset Password Page
     When User Enter <Email> in Reset Password 

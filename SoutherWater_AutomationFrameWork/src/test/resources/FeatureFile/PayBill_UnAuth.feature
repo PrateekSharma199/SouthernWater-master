@@ -1,20 +1,20 @@
 Feature: This feature file contains scenarios related to Pay Bill UnAuth functionality
 
 
-@SIT 
+@SIT123
 Scenario: Check the SouthernWater App Access
     Given User is on SouthernWater Pay Bill page 
     When User Click on Start
     Then User move to customer details page
     And Back link is also available 
    
-@SIT
+@SIT123
 Scenario: Verify Pay Bill Back Button Functionality
 		Given User is on SouthernWater Pay Bill detail Page
 		When User Click on Back Button
 		Then User is navigated to Pay Detail Main Page
 
-@SIT
+@SIT123
 Scenario: Verify Question Mark ToolTip
 		Given User is on SouthernWater PayBill detail Page
 		When User Click First Time on Question Mark Icons
@@ -29,7 +29,7 @@ Scenario: Check the mandatory field error message for Pay Bill
 		When User Perform Click Action on Continue Button of Pay Bill Detail Page
 		Then User should not be able to Proceed & System throw the mandatory field Error Message
 		
-@SIT
+@SIT123
 Scenario: Check the error message for Incorrect Data
 		Given User is on SouthernWater Pay Bill on Your Detail Step
 		When User enter all details
@@ -37,14 +37,14 @@ Scenario: Check the error message for Incorrect Data
 		Then User Should see the error Message for incorrect Data
 		
 
-@SIT
+@SIT123
 Scenario: Check the error message removed after entering mandatory field
 		Given User is on SouthernWater Pay Bill with mandatory field error message
 		When User enter all details in form
 		Then User Should not see the error Message for mandatory fields
 		
 
-@SIT
+@SIT123
 Scenario Outline: As a Unregistered user User Can Pay Partial Amount of My Bill
 		Given User is Accesing Pay Bill Detail Page
 		And User Click Start Button on Page
@@ -68,7 +68,7 @@ Scenario Outline: As a Unregistered user User Can Pay Partial Amount of My Bill
 		 
 
 
-@SIT
+@SIT123
 Scenario Outline: As a Unregistered user User Can Pay Full Amount of My Bill
 		Given User have Open Pay Bill Detail Page
 		And User Click Start Link on Page

@@ -2,7 +2,7 @@
 
     
  
- @SIT
+ @SIT123
   Scenario: Verify the paperless Setting for online Bill
     Given User is on login page
     And User enters login credentials

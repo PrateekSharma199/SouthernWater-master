@@ -41,7 +41,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | NDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Submit Meter Navigation
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -54,7 +54,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | MDD|
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Make a payment Navigation
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -67,7 +67,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | NDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Close Account Navigation
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -80,7 +80,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | NDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify the paperless Setting for online Bill
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -95,7 +95,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
 
   
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Your Profile Navigation
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -108,7 +108,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | NDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Payment History Navigation
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -134,7 +134,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | MDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Submit Meter Navigation by quick link on Dashboard
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -146,7 +146,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | MDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify You are moving Navigation by quick link on Dashboard
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -170,7 +170,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | NDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Your Profile Navigation by quick link on Dashboard
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -182,7 +182,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | NDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Contact Us Navigation from Dashboard
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -194,7 +194,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | NDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Find out more Navigation from Dashboard
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -206,7 +206,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType |
       | NDD      |
 
-  @SIT
+  @SIT123
   Scenario Outline: Registered User can access How to keep it clear
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -219,7 +219,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | NDD      |
 
   # UnMetered Non Direct Debit Customer >> UMNDD
-  @SIT
+  @SIT123
   Scenario Outline: Verify Account Dashboard Quick links for Un-Metered Account
     Given User is on login page
     And User Login with <CustType> Credentials
@@ -236,7 +236,7 @@ Feature: Scenario related to Account Dashboard for Non Direct Debit Customer
       | CustType | Links                                                                                          |
       | UMNDD    | Make a payment ,View billing history, View account statement ,View payment history ,Change paperless settings |
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Struggling to pay Navigation from Dashboard
     Given User is on login page
     And User Login with <CustType> Credentials

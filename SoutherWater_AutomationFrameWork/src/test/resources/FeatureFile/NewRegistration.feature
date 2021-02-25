@@ -1,6 +1,6 @@
 Feature: This feature file contains scenarios related New-Account-Registration functionality
 
-  @SIT
+  @SIT123
   Scenario Outline: New Account Registration
     Given User is on Online Registration Link
     When User agree  Terms and Condition
@@ -18,7 +18,7 @@ Feature: This feature file contains scenarios related New-Account-Registration f
       | CustNumber | LastName | EmailID              | Password   | Question1                                      | Answer1 | Question2                           | Answer2 |
       |   30041953 | Pinku    | xovisi7659@hmnmw.com | Apple@1234 | What was the model of the first car you owned? | Maruti  | What is the name of your first pet? | Dog     |
 
-  @SIT
+  @SIT123
   Scenario Outline: Mandatory Field Validation
     Given User is on Online Registration Link
     And User agree  Terms and Condition
@@ -44,7 +44,7 @@ Feature: This feature file contains scenarios related New-Account-Registration f
       | WrongInput | CustNumber | LastName | EmailID              | Password   | Question1                                      | Answer1 | Question2                           | Answer2 |
       | test33     |   30041953 | Pinku    | xovisi7659@hmnmw.com | Apple@1234 | What was the model of the first car you owned? | Maruti  | What is the name of your first pet? | Dog     |
 
-  @SIT
+  @SIT123
   Scenario Outline: Edit Email ID
     Given User has logged in using Customer Number <CustNumber> Last Name <LastName> Email <EmailID>
     And User Set Password as <Password>
@@ -62,7 +62,7 @@ Feature: This feature file contains scenarios related New-Account-Registration f
       | test33     |   30041953 | Pinku    | xovisi7659@hmnmw.com | newEmail@hmnmw.com | Apple@1234 | What was the model of the first car you owned? | Maruti  | What is the name of your first pet? | Dog     |
       
       
- @SIT
+ @SIT123
   Scenario Outline: Back Forward Traversal
     Given User has logged in using Customer Number <CustNumber> Last Name <LastName> Email <EmailID>
     And User Set Password as <Password>

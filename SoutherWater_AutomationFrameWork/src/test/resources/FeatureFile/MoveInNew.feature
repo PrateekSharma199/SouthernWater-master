@@ -1,6 +1,6 @@
 Feature: Scenario related Move-In functionality
 
-  @SIT
+  @SIT123
   Scenario: Verify End to End Move-In Mandatory Field
     Given User have open the move-in page
     And User click on Start button
@@ -272,7 +272,7 @@ Feature: Scenario related Move-In functionality
       | PostCode | Address                            | PostCode2 | Address2                           | NTitle | FName   | MName   | LName   | DOB        | PNumber    | email            | Password  | Question1                                      | Answer1 | Question2                           | Answer2 |
       | PO33 1AT | 155 MARLBOROUGH ROAD,RYDE,PO33 1AT | PO33 2JT  | 19 RIBOLEAU STREET, RYDE, PO33 2JT | Dr.    | FTest21 | MTest21 | LTest21 | 25/10/1985 | 9818156878 | test2A@yahoo.com | Apple@123 | What was the model of the first car you owned? | Maruti  | What is the name of your first pet? | Dog     |
 
-  @SIT
+  @SIT123
   Scenario Outline: Move-in into metered Property as DD Customer Full payment
     Given User have open the move-in page
     And User click on Start button
@@ -388,7 +388,7 @@ Feature: Scenario related Move-In functionality
     And User Click Continue in MoveIN
     And User Should move to Check Detail Page
 
-  @SIT
+  @SIT123
   Scenario Outline: Verify Address Edit from Check and Confirm Step
     Given User is at Check Detail Step of Move-in
     When User Click Back Button
@@ -410,7 +410,7 @@ Feature: Scenario related Move-In functionality
       | PostCode | Address                                     |
       | PO39 0AN | IVYHURST ,  THE BROADWAY, TOTLAND, PO39 0AN |
 
-  @SIT
+  @SIT123
   Scenario: Verify the User interface is loaded Correctly
     Given User have open the move-in page
     When User Moved till Check Detail Page
