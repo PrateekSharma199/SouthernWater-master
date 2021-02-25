@@ -80,7 +80,7 @@ public class baseDriver implements apiDriver, webDriver,desktopDriver,mobileDriv
 			 * options.addArguments("--disable-popup-blocking");
 			 */
 			options.addArguments("--no-sandbox");
-			options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+			//options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
 			
 			options.addArguments("--disable-dev-shm-usage");
 			
